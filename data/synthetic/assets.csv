@@ -1,0 +1,10 @@
+asset_id,tail_number,platform,squadron,mission_capable,hours_since_maintenance,priority
+A-101,86-0171,F-16C,55 FS,true,41,high
+A-102,87-0324,F-16C,55 FS,false,112,high
+A-103,88-0401,F-16D,55 FS,true,36,medium
+A-201,91-2110,C-130J,41 AS,true,54,high
+A-202,92-0199,C-130J,41 AS,false,128,medium
+A-301,10-4192,MQ-9,432 WG,true,22,high
+A-302,11-3004,MQ-9,432 WG,false,97,medium
+A-401,07-7188,KC-46A,22 ARW,true,61,high
+

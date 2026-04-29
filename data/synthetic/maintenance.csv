@@ -1,0 +1,8 @@
+event_id,asset_id,opened_at,category,severity,status,estimated_hours
+MX-9001,A-102,2027-01-28,flight-control,critical,open,18
+MX-9002,A-202,2027-01-25,engine,high,open,26
+MX-9003,A-302,2027-01-30,sensor-payload,medium,open,9
+MX-9004,A-401,2027-01-31,hydraulics,medium,in-progress,6
+MX-9005,A-101,2027-01-20,avionics,low,closed,4
+MX-9006,A-201,2027-01-26,landing-gear,medium,closed,8
+

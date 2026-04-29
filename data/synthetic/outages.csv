@@ -1,0 +1,6 @@
+outage_id,system,scope,started_at,status,impact_score
+O-7001,maintenance-scheduler,41 AS,2027-02-01T04:10:00Z,degraded,18
+O-7002,parts-tracker,55 FS,2027-02-01T06:40:00Z,degraded,22
+O-7003,identity-provider,all,2027-02-01T09:00:00Z,resolved,8
+O-7004,sensor-tasking,432 WG,2027-02-02T01:30:00Z,degraded,15
+

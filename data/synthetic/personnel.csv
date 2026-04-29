@@ -1,0 +1,12 @@
+person_id,squadron,role,available,shift,clearance
+U-001,55 FS,maintainer,true,day,secret
+U-002,55 FS,maintainer,false,night,secret
+U-003,55 FS,crew-chief,true,day,secret
+U-004,41 AS,maintainer,false,day,secret
+U-005,41 AS,crew-chief,true,night,secret
+U-006,432 WG,sensor-operator,true,day,top-secret
+U-007,432 WG,maintainer,false,night,secret
+U-008,22 ARW,maintainer,true,day,secret
+U-009,22 ARW,cyber-defense,true,day,top-secret
+U-010,55 FS,cyber-defense,true,night,top-secret
+

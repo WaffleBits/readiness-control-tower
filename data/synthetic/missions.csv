@@ -1,0 +1,10 @@
+mission_id,mission_date,asset_id,mission_type,status,delay_minutes,required_by
+M-1001,2027-02-01,A-101,defensive-counter-air,completed,0,air-tasking-order
+M-1002,2027-02-01,A-102,defensive-counter-air,delayed,95,air-tasking-order
+M-1003,2027-02-02,A-201,airlift,completed,12,theater-mobility-plan
+M-1004,2027-02-02,A-202,airlift,cancelled,180,theater-mobility-plan
+M-1005,2027-02-03,A-301,isr,completed,0,joint-collection-plan
+M-1006,2027-02-03,A-302,isr,delayed,70,joint-collection-plan
+M-1007,2027-02-04,A-401,tanker-support,scheduled,0,air-refueling-plan
+M-1008,2027-02-04,A-103,training,scheduled,0,training-plan
+

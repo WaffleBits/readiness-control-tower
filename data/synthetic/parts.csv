@@ -1,0 +1,7 @@
+part_id,asset_id,nomenclature,status,eta_days,criticality
+P-5001,A-102,flight-control-actuator,backordered,6,critical
+P-5002,A-202,turbine-temperature-sensor,in-transit,3,high
+P-5003,A-302,eo-ir-stabilizer,backordered,5,medium
+P-5004,A-401,hydraulic-filter,on-hand,0,medium
+P-5005,A-103,avionics-cooling-fan,on-hand,0,low
+
