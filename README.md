@@ -1,5 +1,7 @@
 # Readiness Control Tower
 
+[![CI](https://github.com/WaffleBits/readiness-control-tower/actions/workflows/ci.yml/badge.svg)](https://github.com/WaffleBits/readiness-control-tower/actions/workflows/ci.yml)
+
 Readiness Control Tower is a public-safe mission operations demo that turns messy operational data into a commander-facing readiness picture. It uses only synthetic data and is designed to show end-to-end product judgment: data modeling, API design, root-cause analysis, frontend workflow, and deployable local infrastructure.
 
 ## Why This Exists
@@ -17,6 +19,13 @@ The project is intentionally relevant to roles that combine engineering with ope
 - Exposes a FastAPI backend for readiness, timeline, root-cause, and what-if endpoints.
 - Provides a React/TypeScript command dashboard for operational scanning.
 - Runs locally through Docker Compose.
+
+## Reviewer Fast Path
+
+- Start with `backend/app/analytics.py` for the readiness model.
+- Check `backend/tests/test_analytics.py` for behavior-focused tests.
+- Open `frontend/src/App.tsx` for the command dashboard workflow.
+- Read `docs/PORTFOLIO_REVIEW.md` for the role-specific signal.
 
 ## Tech Stack
 
@@ -90,4 +99,6 @@ This repo is meant to communicate the ability to:
 - Build across backend, frontend, data, and deployment surfaces.
 - Explain technical decisions in a mission-first way.
 - Keep public portfolio work clear of sensitive information.
+
+See `SECURITY.md` before adding data or integrations.
 
