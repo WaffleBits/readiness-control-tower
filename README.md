@@ -20,12 +20,22 @@ The project is intentionally relevant to roles that combine engineering with ope
 - Provides a React/TypeScript command dashboard for operational scanning.
 - Runs locally through Docker Compose.
 
+## Engineering Scope
+
+This repo is an operational software artifact, not just a dashboard. It clarifies ambiguous user workflows, models messy cross-domain data, exposes tested backend logic, and provides a frontend that supports decisions instead of static reporting.
+
+Relevant areas:
+
+- Mission and deployment engineering: operational workflows, root-cause analysis, recommendation surfaces, and public-safe mission framing.
+- Security engineering: degraded systems, audit-aware workflows, controlled data handling, and clear boundaries around sensitive information.
+- Platform/product engineering: API design, Docker-based local deployment, frontend/backend integration, and reviewer-friendly tests.
+
 ## Reviewer Fast Path
 
 - Start with `backend/app/analytics.py` for the readiness model.
 - Check `backend/tests/test_analytics.py` for behavior-focused tests.
 - Open `frontend/src/App.tsx` for the command dashboard workflow.
-- Read `docs/PORTFOLIO_REVIEW.md` for the role-specific signal.
+- Read `docs/PORTFOLIO_REVIEW.md` for the technical review notes.
 
 ## Tech Stack
 
@@ -91,9 +101,9 @@ curl -X POST http://localhost:8000/api/what-if \
 
 All datasets are synthetic and created for demonstration purposes. This repository does not include operational, classified, export-controlled, proprietary, or government-furnished information.
 
-## Interview Signal
+## Engineering Notes
 
-This repo is meant to communicate the ability to:
+This repo covers:
 
 - Translate ambiguous operations into a usable software workflow.
 - Build across backend, frontend, data, and deployment surfaces.

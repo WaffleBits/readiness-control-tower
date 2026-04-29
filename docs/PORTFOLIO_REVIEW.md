@@ -18,9 +18,15 @@ This project is intentionally designed as a public-safe engineering artifact for
 - Explaining readiness degradation with evidence instead of static metrics.
 - Keeping the project scoped enough to run locally while leaving a credible production roadmap.
 
-## Target Role Signal
+## Technical Scope
 
-- Palantir: mission analytics, deployment engineering, operational decision support.
-- Security teams: auditability, system outages, degraded workflows, public-safe data handling.
-- AI infrastructure teams: can be extended into model-driven recommendation and simulation workflows.
+- Mission and deployment engineering: mission analytics, operational decision support, and user-facing workflows under uncertainty.
+- Security teams: auditability, system outages, degraded workflows, public-safe data handling, and access-control extension points.
+- AI infrastructure teams: can be extended into model-driven recommendation, simulation, and evaluation workflows.
 
+## Gaps Worth Closing Next
+
+- Add role-based access control around operational views.
+- Add OpenTelemetry traces and structured service logs.
+- Add a durable store such as Postgres or DuckDB behind the synthetic CSV model.
+- Add runbooks that explain degraded-data, stale-feed, and failed-recommendation scenarios.
