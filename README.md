@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/WaffleBits/readiness-control-tower/actions/workflows/ci.yml/badge.svg)](https://github.com/WaffleBits/readiness-control-tower/actions/workflows/ci.yml)
 
-Readiness Control Tower is a public-safe mission operations demo that turns messy operational data into a commander-facing readiness picture. It uses only synthetic data and is designed to show end-to-end product judgment: data modeling, API design, root-cause analysis, frontend workflow, and deployable local infrastructure.
+Readiness Control Tower is a mission operations demo that turns messy operational data into a commander-facing readiness picture. It uses only synthetic data and is designed to show end-to-end product judgment: data modeling, API design, root-cause analysis, frontend workflow, and deployable local infrastructure.
 
 ## Why This Exists
 
@@ -26,7 +26,7 @@ This repo is an operational software artifact, not just a dashboard. It clarifie
 
 Relevant areas:
 
-- Mission and deployment engineering: operational workflows, root-cause analysis, recommendation surfaces, and public-safe mission framing.
+- Mission and deployment engineering: operational workflows, root-cause analysis, recommendation surfaces and mission framing.
 - Security engineering: degraded systems, audit-aware workflows, controlled data handling, and clear boundaries around sensitive information.
 - Platform/product engineering: API design, Docker-based local deployment, frontend/backend integration, and reviewer-friendly tests.
 
@@ -51,7 +51,7 @@ Relevant areas:
 .
 ├── backend/              # FastAPI service and analytics engine
 ├── frontend/             # React/TypeScript dashboard
-├── data/synthetic/       # Public-safe synthetic readiness datasets
+├── data/synthetic/       # Synthetic readiness datasets
 ├── ARCHITECTURE.md       # System design notes
 ├── PRD.md                # Product requirements and user workflows
 └── TODO.md               # Roadmap for production-grade extensions
@@ -97,9 +97,6 @@ curl -X POST http://localhost:8000/api/what-if \
   -d "{\"expedite_parts_days\": 2, \"restore_systems\": [\"maintenance-scheduler\"]}"
 ```
 
-## Public-Safe Data Statement
-
-All datasets are synthetic and created for demonstration purposes. This repository does not include operational, classified, export-controlled, proprietary, or government-furnished information.
 
 ## Engineering Notes
 
