@@ -18,22 +18,11 @@ Mission teams rarely need another static dashboard. They need to know why readin
 - Provides a React/TypeScript command dashboard for operational scanning.
 - Runs locally through Docker Compose.
 
-## Engineering Scope
+## Where to look
 
-This repo is an operational software artifact, not just a dashboard. It clarifies ambiguous user workflows, models messy cross-domain data, exposes tested backend logic, and provides a frontend that supports decisions instead of static reporting.
-
-Relevant areas:
-
-- Mission and deployment engineering: operational workflows, root-cause analysis, recommendation surfaces and mission framing.
-- Security engineering: degraded systems, audit-aware workflows, controlled data handling, and clear boundaries around sensitive information.
-- Platform/product engineering: API design, Docker-based local deployment, frontend/backend integration, and reviewer-friendly tests.
-
-## Reviewer Fast Path
-
-- Start with `backend/app/analytics.py` for the readiness model.
-- Check `backend/tests/test_analytics.py` for behavior-focused tests.
-- Open `frontend/src/App.tsx` for the command dashboard workflow.
-- Read `docs/PORTFOLIO_REVIEW.md` for the technical review notes.
+- `backend/app/analytics.py`: the readiness model and root-cause scoring.
+- `backend/tests/test_analytics.py`: behavior-focused tests.
+- `frontend/src/App.tsx`: the command dashboard workflow.
 
 ## Tech Stack
 
