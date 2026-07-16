@@ -2,13 +2,11 @@
 
 [![CI](https://github.com/WaffleBits/readiness-control-tower/actions/workflows/ci.yml/badge.svg)](https://github.com/WaffleBits/readiness-control-tower/actions/workflows/ci.yml)
 
-Readiness Control Tower is a mission operations demo that turns messy operational data into a commander-facing readiness picture. It uses only synthetic data and is designed to show end-to-end product judgment: data modeling, API design, root-cause analysis, frontend workflow, and deployable local infrastructure.
+**Live demo: [wafflebits.github.io/readiness-control-tower](https://wafflebits.github.io/readiness-control-tower/)** (static build with bundled synthetic data and an in-browser what-if model; the full FastAPI backend runs via docker compose below)
 
-## Why This Exists
+Readiness Control Tower is a mission operations demo that turns messy operational data into a commander-facing readiness picture. It uses only synthetic data and shows the full path from data modeling and API design to root-cause analysis and a decision-focused frontend.
 
-Mission teams often do not need another static dashboard. They need to know why readiness is degrading, what is blocking execution, and which action has the best operational return. This repo models that workflow with synthetic sortie, maintenance, parts, personnel, and system outage data.
-
-The project is intentionally relevant to roles that combine engineering with operational problem solving, including forward deployed engineering, security engineering, mission analytics, and government deployment work.
+Mission teams rarely need another static dashboard. They need to know why readiness is degrading, what is blocking execution, and which action has the best operational return. This repo models that workflow with synthetic sortie, maintenance, parts, personnel, and system outage data.
 
 ## What It Does
 
