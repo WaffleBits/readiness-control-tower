@@ -28,7 +28,7 @@ The backend keeps analytics in `backend/app/analytics.py` and API routing in `ba
 
 Key choices:
 
-- CSV input keeps the repo public-safe and easy to inspect.
+- CSV input keeps the data synthetic and easy to inspect.
 - Analytics use Python standard library code so the core logic is testable without service dependencies.
 - FastAPI exposes the decision workflow through simple endpoints.
 - What-if analysis returns a projected readiness delta rather than pretending to optimize a full schedule.

@@ -52,7 +52,7 @@ def _normalize_row(row: dict[str, str]) -> dict[str, Any]:
 
 
 class ReadinessAnalytics:
-    """Analytics layer over a public-safe synthetic readiness dataset."""
+    """Analytics layer over a synthetic readiness dataset."""
 
     def __init__(self, data_dir: str | Path | None = None) -> None:
         self.data_dir = Path(data_dir or os.getenv("DATA_DIR") or _default_data_dir())
