@@ -8,7 +8,6 @@ import {
   Plane,
   RadioTower,
   RefreshCw,
-  ShieldCheck,
   Users,
   Wrench,
   Zap
@@ -111,10 +110,6 @@ function App() {
           <span className={`source-pill ${source}`}>
             <RadioTower size={16} />
             {source === "api" ? "Live API" : "Demo data"}
-          </span>
-          <span className="source-pill">
-            <ShieldCheck size={16} />
-            Public-safe
           </span>
         </div>
       </header>

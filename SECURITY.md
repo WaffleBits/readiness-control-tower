@@ -1,6 +1,6 @@
 # Security
 
-## Public-Safe Data
+## Data
 
 This repository uses synthetic data only. Do not add classified, proprietary, government-furnished, export-controlled, customer, production, or otherwise sensitive information.
 
