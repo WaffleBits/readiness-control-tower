@@ -2,97 +2,65 @@
 
 [![CI](https://github.com/WaffleBits/readiness-control-tower/actions/workflows/ci.yml/badge.svg)](https://github.com/WaffleBits/readiness-control-tower/actions/workflows/ci.yml)
 
-**Live demo: [wafflebits.github.io/readiness-control-tower](https://wafflebits.github.io/readiness-control-tower/)** (static build with bundled synthetic data and an in-browser what-if model; the full FastAPI backend runs via docker compose below)
+A decision dashboard that explains why fleet readiness is degrading, not just that it
+is, and estimates what a fix would change. It runs on synthetic sortie, maintenance,
+parts, personnel and outage data.
 
-Readiness Control Tower is a mission operations demo that turns messy operational data into a commander-facing readiness picture. It uses only synthetic data and shows the full path from data modeling and API design to root-cause analysis and a decision-focused frontend.
+**[Open the live demo](https://wafflebits.github.io/readiness-control-tower/)**
 
-Mission teams rarely need another static dashboard. They need to know why readiness is degrading, what is blocking execution, and which action has the best operational return. This repo models that workflow with synthetic sortie, maintenance, parts, personnel, and system outage data.
+![Readiness dashboard showing score, root causes and recommendations](docs/dashboard.jpg)
 
-## What It Does
+## Result
 
-- Ingests synthetic operational data from CSV files.
-- Scores fleet and mission readiness.
-- Explains root causes behind delays and degraded assets.
-- Produces action recommendations with evidence.
-- Exposes a FastAPI backend for readiness, timeline, root-cause, and what-if endpoints.
-- Provides a React/TypeScript command dashboard for operational scanning.
-- Runs locally through Docker Compose.
+On the bundled data, the model scores readiness at 58.2, with 5 of 8 assets mission
+capable, and ranks maintenance backlog, supply and system outages as the causes. The
+what-if view projects the score change from an intervention such as expediting parts.
+The demo runs entirely in the browser with bundled data. All of the data is synthetic.
 
-## Where to look
+## How it works
 
-- `backend/app/analytics.py`: the readiness model and root-cause scoring.
-- `backend/tests/test_analytics.py`: behavior-focused tests.
-- `frontend/src/App.tsx`: the command dashboard workflow.
-
-## Tech Stack
-
-- Backend: Python, FastAPI, standard-library analytics
-- Frontend: React, TypeScript, Vite
-- Data: synthetic CSV datasets with a warehouse-friendly schema
-- Infra: Docker Compose
-- Tests: Python `unittest`
-
-## Repository Layout
-
-```text
-.
-├── backend/              # FastAPI service and analytics engine
-├── frontend/             # React/TypeScript dashboard
-├── data/synthetic/       # Synthetic readiness datasets
-├── ARCHITECTURE.md       # System design notes
-├── PRD.md                # Product requirements and user workflows
-└── TODO.md               # Roadmap for production-grade extensions
+```mermaid
+flowchart LR
+    CSV[Synthetic CSV data] --> A[Analytics engine<br/>score, risks, root causes]
+    A --> API[FastAPI service]
+    API --> UI[React dashboard]
+    A --> T[Unit tests]
 ```
 
-## Run Locally
-
-### Backend
-
-```bash
-cd backend
-python -m venv .venv
-source .venv/bin/activate  # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
-uvicorn app.main:app --reload
-```
-
-The API runs at `http://localhost:8000`.
-
-### Frontend
-
-```bash
-cd frontend
-npm install
-npm run dev
-```
-
-The app runs at `http://localhost:5173`.
-
-### Docker
+## Run it
 
 ```bash
 docker compose up --build
+curl http://localhost:8000/api/root-causes
+python -m unittest discover -s backend/tests
 ```
 
-## API Examples
+The dashboard runs at `http://localhost:5173` and the API at `http://localhost:8000`.
+To try a what-if from the command line:
 
 ```bash
-curl http://localhost:8000/api/readiness
-curl http://localhost:8000/api/root-causes
 curl -X POST http://localhost:8000/api/what-if \
   -H "Content-Type: application/json" \
   -d "{\"expedite_parts_days\": 2, \"restore_systems\": [\"maintenance-scheduler\"]}"
 ```
 
+## Design decisions
 
-## Engineering Notes
+1. **Standard-library analytics.** The scoring in `backend/app/analytics.py` has no
+   service dependencies, so the model can be tested on its own.
+2. **Explain before recommending.** Each root cause lists the assets and evidence
+   behind it, because a score alone gives nobody anything to act on.
+3. **Project a delta, not a schedule.** The what-if returns a projected change in
+   readiness rather than pretending to optimize a full schedule.
 
-This repo covers:
+## Limitations
 
-- Translate ambiguous operations into a usable software workflow.
-- Build across backend, frontend, data, and deployment surfaces.
-- Explain technical decisions in a mission-first way.
-- Keep public portfolio work clear of sensitive information.
+- The data is synthetic, and scoring weights are illustrative rather than calibrated.
+- It reads static CSV files. There is no live feed, auth or persistence.
+- The what-if is a simple projection, not a simulation.
 
-See `SECURITY.md` before adding data or integrations.
+## More
 
+- [Architecture](ARCHITECTURE.md)
+- [Product requirements](PRD.md)
+- [Roadmap](TODO.md)
